@@ -34,7 +34,7 @@ function download_version() {
   (
     echo "Downloading sqldef v$version..."
 
-    echo "Downloading mysqldef..."
+    echo "Downloading mysqldef from $mysqldef_bin_url..."
 
     local mysqldef_bin
     mysqldef_bin="$tmpdir/mysqldef.${ext}"
@@ -42,7 +42,7 @@ function download_version() {
     $cmd -o "$mysqldef_bin" "$mysqldef_bin_url"
     extract "$mysqldef_bin" "$download_path"
 
-    echo "Downloading psqldef..."
+    echo "Downloading psqldef from $psqldef_bin_url..."
 
     local psqldef_bin
     psqldef_bin="$tmpdir/psqldef.${ext}"
@@ -50,7 +50,7 @@ function download_version() {
     $cmd -o "$psqldef_bin" "$psqldef_bin_url"
     extract "$psqldef_bin" "$download_path"
 
-    echo "Downloading mssqldef..."
+    echo "Downloading mssqldef from $mssqldef_bin_url..."
 
     local mssqldef_bin
     mssqldef_bin="$tmpdir/mssqldef.${ext}"
@@ -58,7 +58,7 @@ function download_version() {
     $cmd -o "$mssqldef_bin" "$mssqldef_bin_url"
     extract "$mssqldef_bin" "$download_path"
 
-    echo "Downloading sqlite3def..."
+    echo "Downloading sqlite3def from $sqlite3def_bin_url..."
 
     local sqlite3def_bin
     sqlite3def_bin="$tmpdir/sqlite3def.${ext}"

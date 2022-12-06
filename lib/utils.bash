@@ -81,6 +81,6 @@ function get_temp_dir() {
 }
 
 function fail() {
-  echo -e "\e[31mFail:\e[m $*"
+  echo -e "\e[31mFail:\e[m $*" 1>&2
   exit 1
 }
