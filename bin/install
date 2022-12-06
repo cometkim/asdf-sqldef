@@ -18,21 +18,8 @@ function install_version() {
 
     mkdir -p "$install_path/bin"
 
-    echo "Installing mysqldef"
-    cp "$download_path/mysqldef" "$install_path/bin/mysqldef"
-    chmod +x "$install_path/bin/mysqldef"
-
-    echo "Installing psqldef"
-    cp "$download_path/psqldef" "$install_path/bin/psqldef"
-    chmod +x "$install_path/bin/psqldef"
-
-    echo "Installing mssqldef"
-    cp "$download_path/mssqldef" "$install_path/bin/mssqldef"
-    chmod +x "$install_path/bin/mssqldef"
-
-    echo "Installing sqlite3def"
-    cp "$download_path/sqlite3def" "$install_path/bin/sqlite3def"
-    chmod +x "$install_path/bin/sqlite3def"
+    cp "$download_path/*" "$install_path/bin/"
+    chmod +x "$install_path/bin/*"
 
   ) || (rm -rf "$install_path"; fail "Failed to install sqldef v$version")
 }

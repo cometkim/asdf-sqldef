@@ -55,16 +55,18 @@ function download_version() {
     local mssqldef_bin
     mssqldef_bin="$tmpdir/mssqldef.${ext}"
 
-    curl -fsSL -o "$mssqldef_bin" "$mssqldef_bin_url"
-    extract "$mssqldef_bin" "$download_path"
+    curl -fsSL -o "$mssqldef_bin" "$mssqldef_bin_url" \
+      && extract "$mssqldef_bin" "$download_path" \
+      || echo "This version doesn't include mssqldef"
 
     echo "Downloading sqlite3def from $sqlite3def_bin_url"
 
     local sqlite3def_bin
     sqlite3def_bin="$tmpdir/sqlite3def.${ext}"
 
-    curl -fsSL -o "$sqlite3def_bin" "$sqlite3def_bin_url"
-    extract "$sqlite3def_bin" "$download_path"
+    curl -fsSL -o "$sqlite3def_bin" "$sqlite3def_bin_url" \
+      && extract "$sqlite3def_bin" "$download_path" \
+      || echo "This version doesn't include sqlite3def"
 
   ) || (rm -rf "$download_path"; fail "Failed to download sqldef v$version")
 }
