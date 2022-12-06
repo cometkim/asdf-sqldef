@@ -73,6 +73,13 @@ function get_bin_url() {
   echo -n "$url"
 }
 
+function get_temp_dir() {
+  local tmpdir
+  tmpdir=$(mktemp -d asdf-sqldef.XXXX)
+
+  echo -n "$tmpdir"
+}
+
 function fail() {
   echo -e "\e[31mFail:\e[m $*"
   exit 1
