@@ -18,8 +18,8 @@ function install_version() {
 
     mkdir -p "$install_path/bin"
 
-    cp "$download_path/*" "$install_path/bin/"
-    chmod +x "$install_path/bin/*"
+    cp $download_path/* "$install_path/bin/"
+    chmod +x $install_path/bin/*
 
   ) || (rm -rf "$install_path"; fail "Failed to install sqldef v$version")
 }
