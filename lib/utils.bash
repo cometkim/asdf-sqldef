@@ -23,8 +23,8 @@ function list_github_tags() {
 
 function get_platform() {
   case "$(uname -s | tr '[:upper:]' '[:lower:]')" in
-    "darwin") echo -n "arm64";;
-    "linux") echo -n "amd64";;
+    "darwin") echo -n "darwin";;
+    "linux") echo -n "linux";;
     *) fail "Unsupported platform";;
   esac
 }
