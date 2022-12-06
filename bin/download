@@ -39,7 +39,7 @@ function download_version() {
     local mysqldef_bin
     mysqldef_bin="$tmpdir/mysqldef.${ext}"
 
-    $cmd -o "$mysqldef_bin" "$mysqldef_bin_url"
+    curl -fsSL -o "$mysqldef_bin" "$mysqldef_bin_url"
     extract "$mysqldef_bin" "$download_path"
 
     echo "Downloading psqldef from $psqldef_bin_url"
@@ -47,7 +47,7 @@ function download_version() {
     local psqldef_bin
     psqldef_bin="$tmpdir/psqldef.${ext}"
 
-    $cmd -o "$psqldef_bin" "$psqldef_bin_url"
+    curl -fsSL -o "$psqldef_bin" "$psqldef_bin_url"
     extract "$psqldef_bin" "$download_path"
 
     echo "Downloading mssqldef from $mssqldef_bin_url"
@@ -55,7 +55,7 @@ function download_version() {
     local mssqldef_bin
     mssqldef_bin="$tmpdir/mssqldef.${ext}"
 
-    $cmd -o "$mssqldef_bin" "$mssqldef_bin_url"
+    curl -fsSL -o "$mssqldef_bin" "$mssqldef_bin_url"
     extract "$mssqldef_bin" "$download_path"
 
     echo "Downloading sqlite3def from $sqlite3def_bin_url"
@@ -63,7 +63,7 @@ function download_version() {
     local sqlite3def_bin
     sqlite3def_bin="$tmpdir/sqlite3def.${ext}"
 
-    $cmd -o "$sqlite3def_bin" "$sqlite3def_bin_url"
+    curl -fsSL -o "$sqlite3def_bin" "$sqlite3def_bin_url"
     extract "$sqlite3def_bin" "$download_path"
 
   ) || (rm -rf "$download_path"; fail "Failed to download sqldef v$version")
