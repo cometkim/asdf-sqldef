@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-asdf plugin add sqldef https://github.com/cometkim/asdf-sqldef.git
+asdf plugin add sqldef
 ```
 
 ## Usage
